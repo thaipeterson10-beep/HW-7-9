@@ -61,7 +61,7 @@ def ComputeReactions(nodes):
     for node in nodes:
         [node_x, node_y] = node.location
         roller_reaction += node.yforce_external * (node_x - pin_x)
-        roller_reaction += node.xforce_external * (node_y - pin_y)
+        roller_reaction -= node.xforce_external * (node_y - pin_y)
         # sum of forces in x direction
         sum_Fx_external += node.xforce_external
         # sum of forces in y direction
