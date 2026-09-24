@@ -53,7 +53,7 @@ def ComputeReactions(nodes):
     
     # Continue from here
     # Sum of moments about the pin
- [pin_x,  pin_y] = pin_node.location
+    [pin_x,  pin_y] = pin_node.location
     [roller_x, roller_y] = roller_node.location
     roller_reaction = 0
     sum_Fx_external = 0
