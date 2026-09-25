@@ -90,7 +90,7 @@ class TestGeometryOperationsPart1(unittest.TestCase):
         self.assertAlmostEqual(dot_23, geom.DotProduct(vec2, vec3), correct_decimals)
         
     
-     def test_SineVectors(self):
+    def test_SineVectors(self):
         x_dir = [1,0]
         y_dir = [0,1]
         
