@@ -70,29 +70,8 @@ def BarNodeToVector(origin_node, bar):
 def BarsToVectors(bar_1, bar_2):
     shared_node = FindSharedNode(bar_1, bar_2)
 
-    # Determine the far node for bar_1
-    if bar_1.init_node == shared_node:
-        bar_1_other = bar_1.end_node
-    else:
-        bar_1_other = bar_1.init_node
-
-    # Determine the far node for bar_2
-    if bar_2.init_node == shared_node:
-        bar_2_other = bar_2.end_node
-    else:
-        bar_2_other = bar_2.init_node
-
-    # Vector pointing from shared node to the other node for each bar
-    vec_1 = np.array([
-        bar_1_other.x - shared_node.x,
-        bar_1_other.y - shared_node.y,
-        bar_1_other.z - shared_node.z,
-    ])
-    vec_2 = np.array([
-        bar_2_other.x - shared_node.x,
-        bar_2_other.y - shared_node.y,
-        bar_2_other.z - shared_node.z,
-    ])
+    vec_1 = BarNodeToVector(shared_node, bar_1)
+    vec_2 = BarNodeToVector(shared_node, bar_2)
 
     return vec_1, vec_2
 
