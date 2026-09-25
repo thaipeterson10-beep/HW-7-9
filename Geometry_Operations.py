@@ -90,7 +90,6 @@ def BarsToVectors(bar_1,bar_2):
     ])
 
     return vec_1, vec_2
-     return
 
 # Cross product of two vectors
 def TwoDCrossProduct(vec1,vec2):
