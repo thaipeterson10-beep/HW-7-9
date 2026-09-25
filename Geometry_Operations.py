@@ -121,14 +121,13 @@ def SineBars(local_x_bar, other_bar):
     # Convert bars into directional vectors pointing away from the shared node
     vec_1, vec_2 = BarsToVectors(local_x_bar, other_bar)
 
-    # Compute cross product and magnitudes
-    cross_product = np.cross(vec_1, vec_2)
-    norm_cross = np.linalg.norm(cross_product)
-    norm_1 = np.linalg.norm(vec_1)
-    norm_2 = np.linalg.norm(vec_2)
+    # Use 2D cross product to preserve orientation sign
+    cross_product = TwoDCrossProduct(vec_1, vec_2)
+    norm_1 = VectorTwoNorm(vec_1)
+    norm_2 = VectorTwoNorm(vec_2)
 
     # Sine of the angle between the two vectors
-    sin_theta = norm_cross / (norm_1 * norm_2)
+    sin_theta = cross_product / (norm_1 * norm_2)
 
     return sin_theta
     
