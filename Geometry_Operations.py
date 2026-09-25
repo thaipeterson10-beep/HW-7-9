@@ -152,3 +152,4 @@ def SineBars(local_x_bar, other_bar):
     sin_theta = norm_cross / (norm_1 * norm_2)
 
     return sin_theta
+    
